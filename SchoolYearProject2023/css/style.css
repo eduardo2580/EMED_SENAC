@@ -1,0 +1,324 @@
+/* styles.css */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  max-width: 90%; /* Adjust the max-width for smaller screens */
+}
+
+#closePopup {
+  display: block;
+  margin-top: 10px;
+}
+
+.audio-description {
+  display: none;
+}
+.wide-audio {
+  width: 100%;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+   width: 100%;
+   height: 300vh; 
+   background: url(bg.jpg) no-repeat;
+   background-size: cover;
+}
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #27ae60;
+    bottom: 40px;
+    top: 90%;
+    left: 90%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 22px;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 720px) {
+    .gotopbtn {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background: #27ae60;
+        bottom: 40px;
+        top: 85%;
+        left: 85%;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+        color: #ffffff;
+        font-size: 22px;
+        border-radius: 50%;
+    }
+}
+
+body > footer {
+  padding: 2rem 1rem 1.5rem 1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: var(--bg);
+
+}
+
+/* Format headers */
+h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.6rem;
+    margin-top: 3rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+  
+  h4 {
+    font-size: 1.44rem;
+  }
+  
+  h5 {
+    font-size: 1.15rem;
+  }
+  
+  h6 {
+    font-size: 0.96rem;
+  }
+  
+  /* Prevent long strings from overflowing container */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* Fix line height when title wraps */
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+  }
+  
+  /* Reduce header size on mobile */
+  @media only screen and (max-width: 720px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 2.1rem;
+    }
+  
+    h3 {
+      font-size: 1.75rem;
+    }
+  
+    h4 {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Format links & buttons */
+  a,
+  a:visited {
+    color: var(--accent);
+  }
+  
+  a:hover {
+    text-decoration: none;
+}
+  
+/* Set the cursor to '?' on an abbreviation and style the abbreviation to show that there is more information underneath */
+abbr[title] {
+    cursor: help;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+  }
+  
+  button:enabled:hover,
+  .button:not([aria-disabled="true"]):hover,
+  input[type="submit"]:enabled:hover,
+  input[type="reset"]:enabled:hover,
+  input[type="button"]:enabled:hover,
+  label[type="button"]:hover {
+    filter: brightness(1.4);
+    cursor: pointer;
+  }
+  
+  .button:focus-visible,
+  button:focus-visible:where(:enabled),
+  input:enabled:focus-visible:where(
+    [type="submit"],
+    [type="reset"],
+    [type="button"]
+  ) {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+/* Global variables. */
+:root,
+::backdrop {
+  /* Set sans-serif & mono fonts */
+  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+    "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+    "Helvetica Neue", sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --standard-border-radius: 5px;
+
+  /* Default (light) theme */
+  --bg: #fff;
+  --accent-bg: #f5f7ff;
+  --text: #212121;
+  --text-light: #585858;
+  --border: #898EA4;
+  --accent: #00F;
+  --code: #d81b60;
+  --preformatted: #444;
+  --marked: #ffdd33;
+  --disabled: #efefef;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root,
+  ::backdrop {
+    color-scheme: dark;
+    --bg: #212121;
+    --accent-bg: #FFF;
+    --text: #dcdcdc;
+    --text-light: #ababab;
+    --accent: #FFF;
+    --code: #FFF;
+    --accent: #FFF;
+    --preformatted: #ccc;
+    --disabled: #FFF;
+  }
+  /* Add a bit of transparency so light media isn't so glaring in dark mode */
+  img,
+  video {
+    opacity: 0.8;
+  }
+}
+
+mark {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--marked);
+}
+
+main img,
+main video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--standard-border-radius);
+
+}
+
+/* Reset box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Reset default appearance */
+textarea,
+select,
+input,
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+html {
+  /* Set the font globally */
+  font-family: var(--sans-font);
+  scroll-behavior: smooth;
+}
+/* Make the body a nice central block */
+main {
+    color: var(--text);
+    background-color: var(--bg);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: 1fr min(45rem, 90%) 1fr;
+    margin: 0;
+}
+main > * {
+    grid-column: 2;
+}
+
+.dropdown-item {
+  color: #dcdcdc;
+}
+
+.up {
+  margin-top: 2%;
+}
+
+.txt_bottom{
+  padding-bottom: 2em;
+}
+
+.txt_top{
+  padding-top: 2em;
+}
+
+.image-center{
+  margin-right: auto; 
+  margin-left: auto;
+}
+
+.acolor, a{
+  color: #212121;
+}
+.acolorb, a {
+   color: var(--text);
+}

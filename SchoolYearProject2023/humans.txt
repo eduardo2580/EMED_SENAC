@@ -1,0 +1,19 @@
+/* TEAM */
+Developer and Content Writer: Eduardo Rodrigues
+Website: https://github.com/eduardo2580
+
+Content Writer: Arthur Casado
+
+Content Writer: Guilherme Donella
+
+Content Writer: Janaina Pereira
+
+Content Writer: Mauricio Viterbo
+
+Content Writer: Victor Palmieri
+
+/* SITE */
+Last update:2023/11/02
+Language: Portuguese
+Doctype:HTML5
+IDE: Visual Studio Code
